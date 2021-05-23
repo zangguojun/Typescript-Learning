@@ -1,0 +1,28 @@
+{
+  "name": "typescript-learning",
+  "version": "1.0.0",
+  "description": "初学Typescript",
+  "main": "类.js",
+  "dependencies": {
+    "ts-loader": "^9.2.2",
+    "typescript": "^4.2.4",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zangguojun/Typescript-Learning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zangguojun/Typescript-Learning/issues"
+  },
+  "homepage": "https://github.com/zangguojun/Typescript-Learning#readme"
+}
