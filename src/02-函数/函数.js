@@ -1,34 +1,47 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * 函数定义
+ * 预编译阶段,既申明又赋值
+ */
 function hello(name) {
     console.log('hello', name);
 }
 hello('buchiyu');
-var getUserName = function (firstName, lastName) {
+let getUserName = function (firstName, lastName) {
     return firstName + lastName;
 };
-var name = getUserName('l', 't');
+let name = getUserName('l', 't');
 console.log(name);
+/**
+ * 可选参数
+ * 必须是最后一个
+ */
 function print(name, age) {
     console.log(name, age);
 }
 print('buchiyu');
 print('buchiyu', 21);
-function ajax(url, method) {
-    if (method === void 0) { method = 'GET'; }
+/**
+ * 默认参数
+ */
+function ajax(url, method = 'GET') {
     console.log(url, method);
 }
 ajax('www.baidu.com');
 ajax('www.baidu.com', 'POST');
-function sum(prefix) {
-    var numbers = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        numbers[_i - 1] = arguments[_i];
-    }
-    return prefix + numbers.reduce(function (pre, cur) { return pre + cur; }, 0);
+/**
+ * 剩余参数
+ */
+function sum(prefix, ...numbers) {
+    return prefix + numbers.reduce((pre, cur) => pre + cur, 0);
 }
 console.log(sum('$', 2, 3));
-var obj = {};
+/**
+ * 函数的重载/签名
+ * 函数的重载之间不能杂糅其他代码
+ */
+let obj = {};
 function attr(val) {
     if (typeof val === 'string') {
         obj.name = val;
@@ -43,3 +56,10 @@ console.log(obj);
 function sum2(a, b) { }
 sum2(1, 2);
 sum2('1', '2');
+// 找不到匹配的重载
+//sum2(1,'2')
+/**
+ * 箭头的使用场景
+ * 1,定义箭头函数
+ * 2,定义函数类型
+ */
